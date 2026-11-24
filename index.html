@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image-slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Popins", sans-serif;
+            box-sizing: border-box;
+        }
+        body{
+            background: #191919;
+        }
+        .gallery{
+            display: flex;
+            width: 900px;
+            overflow: scroll;
+        }
+        .gallery div{
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 20px;
+            padding: 10px;
+            flex: none;
+        }
+        .gallery div img{
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            cursor: pointer;
+            filter: grayscale(100%);
+            transition: transform 0.5s ease;
+        }
+        .gallery div img:hover{
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+        .gallery::-webkit-scrollbar{
+            display: none;
+        }
+        .galler-wrap{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10% auto;
+
+        }
+        .fa-circle-chevron-left, .fa-circle-chevron-right{
+            font-size: 40px;
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+    <div class="galler-wrap">
+        <i id="next" class="fa-solid fa-circle-chevron-right"></i>
+    <div class="gallery">
+        <div >
+            <span> <img src="images/image1.jpg"></span>
+            <span> <img src="images/image4.jpg"></span>
+            <span> <img src="images/image3.jpg"></span>
+        </div>
+        <div >
+            <span> <img src="images/image1.jpg"></span>
+            <span> <img src="images/image4.jpg"></span>
+            <span> <img src="images/image5.jpg"></span>
+        </div>
+    </div>
+    <i id="back" class="fa-solid fa-circle-chevron-left"></i>
+     </div>
+</body>
+<script src="script.js"></script>
+</html>
